@@ -1,0 +1,152 @@
+.get-started-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.get-started-container {
+  width: 100%;
+  max-width: 900px;
+}
+
+.get-started-content {
+  text-align: center;
+}
+
+.get-started-content h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.get-started-content .subtitle {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  margin-bottom: 3rem;
+}
+
+.options-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.option-card {
+  position: relative;
+  padding: 3rem 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.option-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--accent-gradient);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 0;
+}
+
+.option-card:hover::before {
+  opacity: 0.1;
+}
+
+.option-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--accent-primary);
+}
+
+.option-icon {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 1.5rem;
+  background: var(--accent-gradient);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 8px 25px rgba(124, 58, 237, 0.3);
+}
+
+.option-card h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+  position: relative;
+  z-index: 1;
+}
+
+.option-card p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  position: relative;
+  z-index: 1;
+}
+
+.option-arrow {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  color: var(--accent-primary);
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+.option-card:hover .option-arrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 1.1rem;
+}
+
+.back-link:hover {
+  color: var(--accent-primary);
+  transform: translateX(-5px);
+}
+
+@media (max-width: 768px) {
+  .get-started-content h1 {
+    font-size: 2rem;
+  }
+  
+  .options-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .option-card {
+    padding: 2rem 1.5rem;
+  }
+  
+  .option-icon {
+    width: 80px;
+    height: 80px;
+  }
+}
